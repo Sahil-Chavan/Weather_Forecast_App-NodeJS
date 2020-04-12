@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/one.css">
+</head>
+<body>
+    {{>header}}
+
+    <h4> {{ head }} </h4>
+    <form action="/weather" method="GET"><br>
+    <br>
+    city:::<input type="text" name="address">
+<br>
+<button type="submit">submit</button>
+
+    </form>
+    {{#if erroor}}
+    <script>
+        alert('{{erroor}}')
+    </script>
+        
+    {{/if}}
+    <br>
+    <br>
+</body>
+</html>
