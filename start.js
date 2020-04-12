@@ -2,6 +2,7 @@ const exp = require('express')
 const path = require('path')
 const hbs = require('hbs')
 const app = exp()
+const port = process.env.PORT || 3000
 const forecast = require('./weather')
 const static_path = path.join(__dirname,'./static')
 const views_path = path.join(__dirname,'./templates')
@@ -39,4 +40,4 @@ app.get('/weather',(req,res)=>{
 app.get('*',(req,res)=>{
     res.send('<h1>get out of here</h1>')
 })
-app.listen(3000,()=>{console.log("server is up on port 3000...")});
+app.listen(port,()=>{console.log("server is up on port ..." + port)});
